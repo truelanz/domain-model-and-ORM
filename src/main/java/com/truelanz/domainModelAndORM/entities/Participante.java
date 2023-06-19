@@ -29,12 +29,12 @@ public class Participante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(unique = true)
     private String nome;
+    @Column(unique = true)
     private String email;
 
     @ManyToMany 
-    @JoinTable(name = "tb_participante_atividade", // classe intermediária que será criada
+    @JoinTable(name = "tb_participante_atividade", // classe (table) intermediária que será criada
                 joinColumns = @JoinColumn(name = "participante_id"), // foreign key da classe onde estou mapeando
                 inverseJoinColumns = @JoinColumn(name = "atividade_id")) // foreign key da classe que estou relacionando
                                                                                 
