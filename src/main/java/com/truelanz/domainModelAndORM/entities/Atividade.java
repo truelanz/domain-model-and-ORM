@@ -34,7 +34,7 @@ public class Atividade {
     private String descricao;
     private Double preco;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "atividades")
     private Set<Participante> participantes = new HashSet<>();
 
     @OneToMany(mappedBy = "atividade", cascade = CascadeType.ALL) 
